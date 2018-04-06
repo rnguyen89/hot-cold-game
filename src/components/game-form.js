@@ -7,6 +7,7 @@ export default class GameForm extends React.Component {
         const value = this.input.value;
         this.input.value = '';
         this.input.focus();
+        console.log(value)
     }
     render() {
         return (

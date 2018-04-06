@@ -31,12 +31,14 @@ makeGuess(guess) {
         return (
             <div>
                 <GameHeader />
+            <main role="main">
                 <GameSection 
                     feedback={feedback}
                     guessCount={guessCount}
                     onMakeGuess={guess => this.makeGuess(guess)}/>
                 <GameStatus 
                     guesses={guesses}/>
+            </main>
             </div>
         )
     }
