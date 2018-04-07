@@ -18,6 +18,14 @@ export default class GameBoard extends React.Component {
         }
     }
 
+restartGame() {
+    this.setState({
+        guesses: [],
+        feedback: 'Make your guess!',
+        correctAnswer: Math.round(Math.random() * 100 + 1)        
+    });
+}
+
 makeGuess(guess) {
     const difference = Math.abs(this.state.correctAnswer - guess)
 
@@ -34,7 +42,7 @@ makeGuess(guess) {
       } else {
         feedback = 'You got it!';
       }
-      
+
     this.setState({
         feedback,
         guesses: [...this.state.guesses, guess]
@@ -46,7 +54,9 @@ makeGuess(guess) {
         const guessCount = guesses.length;
         return (
             <div>
-                <GameHeader />
+                <GameHeader 
+                    onRestartGame={() => this.restartGame()}
+                          />
             <main role="main">
                 <GameSection 
                     feedback={feedback}
