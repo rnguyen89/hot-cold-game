@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './game-board.css';
 
-import GameForm from './game-form';
+// import GameForm from './game-form';
 import GameSection from './game-section';
 import GameHeader from './game-header';
 import GameStatus from './game-status';
@@ -19,8 +19,24 @@ export default class GameBoard extends React.Component {
     }
 
 makeGuess(guess) {
+    const difference = Math.abs(this.state.correctAnswer - guess)
+
+    let feedback    
+
+    if(difference >= 50) {
+        feedback = "You're ice cold..."
+    } else if (difference >= 30) {
+        feedback = "You're cold..."
+    } else if (difference >= 10) {
+        feedback = "You're warm.."
+    } else if (difference === 1) {
+        feedback = "You've hot!"
+     
+    }else if (difference === 0) {
+        feedback = "You got it!"
+    }
     this.setState({
-        // feedback,
+        feedback,
         guesses: [...this.state.guesses, guess]
     })
 }

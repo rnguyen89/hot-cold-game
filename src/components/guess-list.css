@@ -1,3 +1,12 @@
 #guessList {
     border: 3px solid black;
 }
+
+ul.guessBox {
+    display: block;
+    overflow: auto;
+}
+
+ul.guessBox li {
+    display: inline;
+}

@@ -2,12 +2,16 @@ import React from 'react';
 import './game-form.css';
 
 export default class GameForm extends React.Component {
+    
+
     onSubmit(event) {
         event.preventDefault();
         const value = this.input.value;
         this.input.value = '';
         this.input.focus();
-        console.log(value)
+        this.props.onMakeGuess(value);
+        console.log(value);
+
     }
     render() {
         return (

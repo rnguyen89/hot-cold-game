@@ -6,6 +6,7 @@ export default function GameFeedback(props) {
     let guessAgain;
     if(key !== 0) {
         guessAgain = <span>Guess Again!</span>;
+        console.log(key)
     }
     return (
         <h2
