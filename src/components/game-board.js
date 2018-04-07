@@ -23,18 +23,18 @@ makeGuess(guess) {
 
     let feedback    
 
-    if(difference >= 50) {
-        feedback = "You're ice cold..."
-    } else if (difference >= 30) {
-        feedback = "You're cold..."
-    } else if (difference >= 10) {
-        feedback = "You're warm.."
-    } else if (difference === 1) {
-        feedback = "You've hot!"
-     
-    }else if (difference === 0) {
-        feedback = "You got it!"
-    }
+    if (difference >= 50) {
+        feedback = 'You\'re Ice Cold...';
+      } else if (difference >= 30) {
+        feedback = 'You\'re Cold...';
+      } else if (difference >= 10) {
+        feedback = 'You\'re Warm.';
+      } else if (difference >= 1) {
+        feedback = 'You\'re Hot!';
+      } else {
+        feedback = 'You got it!';
+      }
+      
     this.setState({
         feedback,
         guesses: [...this.state.guesses, guess]
