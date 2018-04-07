@@ -13,5 +13,5 @@ describe('<GameFeedback/>', () => {
 
         let wrapper = shallow(<GameFeedback feedback={TEST_FEEDBACK} />);
         expect(wrapper.contains(TEST_FEEDBACK)).toEqual(true);
-    })
-})
+    });
+});

@@ -9,4 +9,10 @@ ul.guessBox {
 
 ul.guessBox li {
     display: inline;
+    border: 1px solid black;
+}
+
+li {
+    padding-right: 10px;
+    padding-left: 10px;
 }

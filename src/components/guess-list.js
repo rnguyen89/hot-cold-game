@@ -8,7 +8,7 @@ export default function GuessList(props) {
          guesses = props.guesses.map((guess, index) => {
             return (
             <li key={index}>
-              {guess + " "}
+              {guess}
             </li>
             )
         });

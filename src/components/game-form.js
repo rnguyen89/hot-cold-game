@@ -10,7 +10,6 @@ export default class GameForm extends React.Component {
         this.input.value = '';
         this.input.focus();
         this.props.onMakeGuess(value);
-        console.log(value);
 
     }
     render() {
