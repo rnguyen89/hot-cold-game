@@ -1,1 +1,1 @@
-import {RESTART_GAME, MAKE_GUESS} from './actions/actions';
+import {RESTART_GAME, MAKE_GUESS} from './actions/actions'; 
