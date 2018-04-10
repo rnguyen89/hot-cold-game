@@ -6,5 +6,5 @@ import GameBoard from './game-board';
 describe('<GameBoard/>', () => {
     it('Renders without crashing', () => {
         shallow(<GameBoard />);
-    })
-})
+    });
+});
