@@ -7,13 +7,6 @@ export default function GameNav(props) {
         <nav>
             <ul>
                 <li>
-                    <a href="#what"
-                    className="what"
-                    >
-                    What?
-                    </a>
-                </li>
-                <li>
                     <a href="feedback"
                     className="new"
                     onClick={() => props.onRestartGame()}

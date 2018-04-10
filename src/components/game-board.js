@@ -6,6 +6,7 @@ import './game-board.css';
 import GameSection from './game-section';
 import GameHeader from './game-header';
 import GameStatus from './game-status';
+import GameInfo from './game-info';
 
 
 export default class GameBoard extends React.Component {
@@ -64,6 +65,7 @@ makeGuess(guess) {
                     onMakeGuess={guess => this.makeGuess(guess)}/>
                 <GameStatus 
                     guesses={guesses}/>
+                <GameInfo />
             </main>
             </div>
         )
