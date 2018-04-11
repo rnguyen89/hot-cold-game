@@ -1,7 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import './game-form.css';
 
-export default class GameForm extends React.Component {
+import { makeGuess } from '../actions/actions';
+
+
+export class GameForm extends React.Component {
     
 
     onSubmit(event) {
@@ -9,7 +14,7 @@ export default class GameForm extends React.Component {
         const value = this.input.value;
         this.input.value = '';
         this.input.focus();
-        this.props.onMakeGuess(value);
+        this.props.dispatch(makeGuess(value));
 
     }
     render() {
@@ -39,3 +44,5 @@ export default class GameForm extends React.Component {
         )
     }
 }
+
+export default connect ()(GameForm);

@@ -1,4 +1,4 @@
-import {RESTART_GAME, MAKE_GUESS} from './actions/actions'; 
+import {RESTART_GAME, MAKE_GUESS} from '../actions/actions'; 
 
 const initialState = {
     guesses: [],
@@ -7,7 +7,7 @@ const initialState = {
 
 };
 
-export const reducers = (state=initialState, action) => {
+export default (state=initialState, action) => {
     let feedback, guess
 
     if(action.type === RESTART_GAME) {

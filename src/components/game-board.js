@@ -9,65 +9,59 @@ import GameStatus from './game-status';
 import GameInfo from './game-info';
 
 
-export default class GameBoard extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            guesses: [],
-            feedback: 'Make your guess!',
-            correctAnswer: Math.round(Math.random() * 100 + 1)
-        }
-    }
+export default function GameBoard(props) {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             guesses: [],
+//             feedback: 'Make your guess!',
+//             correctAnswer: Math.round(Math.random() * 100 + 1)
+//         }
+//     }
 
-restartGame() {
-    this.setState({
-        guesses: [],
-        feedback: 'Make your guess!',
-        correctAnswer: Math.round(Math.random() * 100 + 1)        
-    });
-}
+// restartGame() {
+//     this.setState({
+//         guesses: [],
+//         feedback: 'Make your guess!',
+//         correctAnswer: Math.round(Math.random() * 100 + 1)        
+//     });
+// }
 
-makeGuess(guess) {
-    const difference = Math.abs(this.state.correctAnswer - guess)
+// makeGuess(guess) {
+//     const difference = Math.abs(this.state.correctAnswer - guess)
 
-    let feedback    
+//     let feedback    
 
-    if (difference >= 50) {
-        feedback = 'You\'re Ice Cold...';
-      } else if (difference >= 30) {
-        feedback = 'You\'re Cold...';
-      } else if (difference >= 10) {
-        feedback = 'You\'re Warm.';
-      } else if (difference >= 1) {
-        feedback = 'You\'re Hot!';
-      } else {
-        feedback = 'You got it!';
-      }
+//     if (difference >= 50) {
+//         feedback = 'You\'re Ice Cold...';
+//       } else if (difference >= 30) {
+//         feedback = 'You\'re Cold...';
+//       } else if (difference >= 10) {
+//         feedback = 'You\'re Warm.';
+//       } else if (difference >= 1) {
+//         feedback = 'You\'re Hot!';
+//       } else {
+//         feedback = 'You got it!';
+//       }
 
-    this.setState({
-        feedback,
-        guesses: [...this.state.guesses, guess]
-    })
-}
+//     this.setState({
+//         feedback,
+//         guesses: [...this.state.guesses, guess]
+//     })
+// }
 
-    render() {
-        const { feedback, guesses } = this.state;
-        const guessCount = guesses.length;
+    // render() {
+    //     const { feedback, guesses } = this.state;
+    //     const guessCount = guesses.length;
         return (
             <div>
-                <GameHeader 
-                    onRestartGame={() => this.restartGame()}
-                          />
+                <GameHeader />
             <main role="main">
-                <GameSection 
-                    feedback={feedback}
-                    guessCount={guessCount}
-                    onMakeGuess={guess => this.makeGuess(guess)}/>
-                <GameStatus 
-                    guesses={guesses}/>
+                <GameSection />
+                <GameStatus />
                 <GameInfo />
             </main>
             </div>
         )
-    }
+    // }
 }
