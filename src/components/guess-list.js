@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './guess-list.css';
 
-export default function GuessList(props) {
+export function GuessList(props) {
     let guesses;
     if(props.guesses) {
          guesses = props.guesses.map((guess, index) => {
@@ -19,3 +20,9 @@ export default function GuessList(props) {
     </ul>
   );
 }
+
+const mapStateToProps = state => ({
+  guesses: state.guesses
+});
+
+export default connect(mapStateToProps)(GuessList);

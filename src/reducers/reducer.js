@@ -7,8 +7,7 @@ const initialState = {
 
 };
 
-export default (state=initialState, action) => {
-    let feedback, guess
+export default (state = initialState, action) => {
 
     if(action.type === RESTART_GAME) {
         return Object.assign({}, state, {
@@ -19,12 +18,14 @@ export default (state=initialState, action) => {
     }
     
     if(action.type === MAKE_GUESS) {
+        let feedback, guess;
         return Object.assign({}, state, {
             feedback,
             guesses: [...state.guesses, guess]
-        })
-
-    const difference = Math.abs(this.state.correctAnswer - guess)
+        });
+        
+// eslint-disable-next-line
+        const difference = Math.abs(guess - state.correctAnswer);
 
     if (difference >= 50) {
         feedback = 'You\'re Ice Cold...';
@@ -41,7 +42,7 @@ export default (state=initialState, action) => {
     return Object.assign({}, state, {
         feedback,
         guesses: [...state.guesses, guess]
-    })
+    });
 
     }
     return state;
