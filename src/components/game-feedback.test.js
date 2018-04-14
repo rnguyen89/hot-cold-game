@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import GameFeedback from './game-feedback';
+import {GameFeedback} from './game-feedback';
 
 describe('<GameFeedback/>', () => {
     it('Renders without crashing', () => {
